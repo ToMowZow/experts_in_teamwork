@@ -6,5 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes: []
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1ecb54572802b3348bfa964dde84f842, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 951f9b6333ea2db488646127041d8dd5, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0933f2200e0a21e4bb595a3103f246bd, type: 2}
