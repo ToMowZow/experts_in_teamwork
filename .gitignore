@@ -60,3 +60,5 @@ crashlytics-build.properties
 
 # Specifically for the EiT project
 /Assets/Imported Assets/Road System/Demo/Scenes/ExampleSystem
+Assets/Scenes/GeriangerTorje.unity
+Assets/Scenes/GeriangerTorje.unity.meta

@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.experts_in_teamwork.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\torje\OneDrive\Dokumenter\8. Semester\experts_in_teamwork\.idea\.idea.experts_in_teamwork\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
