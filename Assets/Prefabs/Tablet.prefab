@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5440452174779283621
 RectTransform:
   m_ObjectHideFlags: 0
@@ -120,8 +120,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22, y: 29.1}
-  m_SizeDelta: {x: 165.88, y: 43.32}
+  m_AnchoredPosition: {x: 29.5, y: 29.1}
+  m_SizeDelta: {x: 105.16, y: 43.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5771611909001723064
 CanvasRenderer:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7008925982368290757}
   - component: {fileID: 6499674170608133816}
+  - component: {fileID: 1266258772551456725}
   m_Layer: 0
   m_Name: Tablet
   m_TagString: Untagged
@@ -268,7 +269,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownTimerText: {fileID: 8704455106670480673}
-  warningAnimator: {fileID: 0}
+  warningAnimator: {fileID: 1266258772551456725}
+--- !u!95 &1266258772551456725
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551220193221811089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc1e0092dd02f1a4ba65aff8bd27552a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5479443522142703612
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3907421632845968444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -344,7 +365,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 255
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

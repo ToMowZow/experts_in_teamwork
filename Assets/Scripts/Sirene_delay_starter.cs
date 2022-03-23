@@ -5,32 +5,35 @@ using UnityEngine;
 
 public class Sirene_delay_starter : MonoBehaviour
 {
-
     [SerializeField] AudioSource m_MyAudioSource;
     [SerializeField] MiniGeirangerManager miniGeirangerManager;
+    [SerializeField] Tablet tablet;
 
     //Play the music
     bool m_Play;
+
     //Detect when you use the toggle, ensures music isn’t played multiple times
     bool m_ToggleChange;
 
     void Start()
     {
         //Ensure the toggle is set to true for the music to play at start-up
-        Invoke("Start_siren", 20);
-        Invoke("Stop_siren", 180);
-        
+        Invoke(nameof(Start_siren), 17);
+        Invoke(nameof(StartTabletWarning), 20);
+        Invoke(nameof(Stop_siren), 20 + Constants.TotalWaveTime);
+
         //Start mini-Geiranger simulation
-        Invoke(nameof(StartWaveSimulation), 25);
+        Invoke(nameof(StartWaveSimulation), 26);
     }
 
     // Function to set the m_Play boolean to true after n seconds set by the invoke function in Start()
     void Start_siren()
     {
-        Debug.Log("Starting Siren: "+Time.time);
+        Debug.Log("Starting Siren: " + Time.time);
         m_Play = true;
         m_ToggleChange = true;
     }
+
     void Stop_siren()
     {
         Debug.Log("Stopping Siren" + Time.time);
@@ -38,11 +41,17 @@ public class Sirene_delay_starter : MonoBehaviour
         m_ToggleChange = true;
     }
 
+    void StartTabletWarning()
+    {
+        tablet.StartWarning();
+
+    }
+
     void StartWaveSimulation()
     {
         miniGeirangerManager.StartSimulation();
     }
-    
+
     void Update()
     {
         //Check to see if you just set the toggle to positive
@@ -54,6 +63,7 @@ public class Sirene_delay_starter : MonoBehaviour
             //Ensure audio doesn’t play more than once
             m_ToggleChange = false;
         }
+
         //Check if you just set the toggle to false
         if (m_Play == false && m_ToggleChange == true)
         {
@@ -77,5 +87,4 @@ public class Sirene_delay_starter : MonoBehaviour
     //        m_ToggleChange = true;
     //    }
     //}
-
 }
