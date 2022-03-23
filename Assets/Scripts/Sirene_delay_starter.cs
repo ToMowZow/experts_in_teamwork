@@ -19,7 +19,7 @@ public class Sirene_delay_starter : MonoBehaviour
         m_MyAudioSource = GetComponent<AudioSource>();
         //Ensure the toggle is set to true for the music to play at start-up
         Invoke("Start_siren", 20);
-        Invoke("Stop_siren", 30);
+        Invoke("Stop_siren", 180);
     }
 
     // Function to set the m_Play boolean to true after n seconds set by the invoke function in Start()
