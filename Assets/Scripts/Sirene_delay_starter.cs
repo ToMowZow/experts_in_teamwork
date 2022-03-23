@@ -6,20 +6,22 @@ using UnityEngine;
 public class Sirene_delay_starter : MonoBehaviour
 {
 
-    AudioSource m_MyAudioSource;
+    [SerializeField] AudioSource m_MyAudioSource;
+    [SerializeField] MiniGeirangerManager miniGeirangerManager;
 
     //Play the music
     bool m_Play;
-    //Detect when you use the toggle, ensures music isn’t played multiple times
+    //Detect when you use the toggle, ensures music isnâ€™t played multiple times
     bool m_ToggleChange;
 
     void Start()
     {
-        //Fetch the AudioSource from the GameObject
-        m_MyAudioSource = GetComponent<AudioSource>();
         //Ensure the toggle is set to true for the music to play at start-up
         Invoke("Start_siren", 20);
         Invoke("Stop_siren", 180);
+        
+        //Start mini-Geiranger simulation
+        Invoke(nameof(StartWaveSimulation), 25);
     }
 
     // Function to set the m_Play boolean to true after n seconds set by the invoke function in Start()
@@ -35,6 +37,12 @@ public class Sirene_delay_starter : MonoBehaviour
         m_Play = false;
         m_ToggleChange = true;
     }
+
+    void StartWaveSimulation()
+    {
+        miniGeirangerManager.StartSimulation();
+    }
+    
     void Update()
     {
         //Check to see if you just set the toggle to positive
@@ -43,7 +51,7 @@ public class Sirene_delay_starter : MonoBehaviour
             //Play the audio you attach to the AudioSource component
             Debug.Log("Playing Audiosource");
             m_MyAudioSource.Play();
-            //Ensure audio doesn’t play more than once
+            //Ensure audio doesnâ€™t play more than once
             m_ToggleChange = false;
         }
         //Check if you just set the toggle to false
@@ -52,7 +60,7 @@ public class Sirene_delay_starter : MonoBehaviour
             Debug.Log("Stopping Audiosource");
             //Stop the audio
             m_MyAudioSource.Stop();
-            //Ensure audio doesn’t play more than once
+            //Ensure audio doesnâ€™t play more than once
             m_ToggleChange = false;
         }
     }
