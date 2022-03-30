@@ -27,7 +27,7 @@ public class Sirene_delay_starter : MonoBehaviour
 
         //Start mini-Geiranger simulation
         Invoke(nameof(StartWaveSimulation), 26);
-        Invoke(nameof(StartRealWave), 60 * 2 + 20);
+        Invoke(nameof(StartRealWave), 60 * 2 + 35);
     }
 
     // Function to set the m_Play boolean to true after n seconds set by the invoke function in Start()
