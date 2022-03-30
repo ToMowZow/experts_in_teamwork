@@ -8,6 +8,7 @@ public class Sirene_delay_starter : MonoBehaviour
     [SerializeField] AudioSource m_MyAudioSource;
     [SerializeField] MiniGeirangerManager miniGeirangerManager;
     [SerializeField] Tablet tablet;
+    [SerializeField] Animator realWaveAnimator;
 
     //Play the music
     bool m_Play;
@@ -17,6 +18,8 @@ public class Sirene_delay_starter : MonoBehaviour
 
     void Start()
     {
+        realWaveAnimator.speed = 0;
+
         //Ensure the toggle is set to true for the music to play at start-up
         Invoke(nameof(Start_siren), 17);
         Invoke(nameof(StartTabletWarning), 20);
@@ -24,6 +27,7 @@ public class Sirene_delay_starter : MonoBehaviour
 
         //Start mini-Geiranger simulation
         Invoke(nameof(StartWaveSimulation), 26);
+        Invoke(nameof(StartRealWave), 60 * 2 + 20);
     }
 
     // Function to set the m_Play boolean to true after n seconds set by the invoke function in Start()
@@ -44,12 +48,16 @@ public class Sirene_delay_starter : MonoBehaviour
     void StartTabletWarning()
     {
         tablet.StartWarning();
-
     }
 
     void StartWaveSimulation()
     {
         miniGeirangerManager.StartSimulation();
+    }
+
+    void StartRealWave()
+    {
+        realWaveAnimator.speed = 1;
     }
 
     void Update()
