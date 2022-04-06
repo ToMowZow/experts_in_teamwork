@@ -23,7 +23,7 @@ public class Sirene_delay_starter : MonoBehaviour
         //Ensure the toggle is set to true for the music to play at start-up
         Invoke(nameof(Start_siren), 17);
         Invoke(nameof(StartTabletWarning), 20);
-        Invoke(nameof(Stop_siren), 20 + Constants.TotalWaveTime);
+        Invoke(nameof(Stop_siren), 150);
 
         //Start mini-Geiranger simulation
         Invoke(nameof(StartWaveSimulation), 26);
